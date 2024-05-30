@@ -16,23 +16,13 @@ X = data[['Rooms', 'Bathroom', 'Landsize']]
 # spliting the data into train and val 
 train_X, val_X, train_y , val_Y = train_test_split(X, y , random_state=1)
 
+def get_mae(max_leaf_nodes , train_X , val_X , train_y , val_y):
+    model = DecisionTreeRegressor(max_leaf_nodes=max_leaf_nodes , random_state=0 )
+    model.fit(train_X , train_y)
+    preds_val = model.predict(val_X)
+    mae = mean_absolute_error(val_y, preds_val)
+    return(mae)
 
-# Define model
-data_model = DecisionTreeRegressor(random_state=1)
-
-# Fit model
-data_model.fit(train_X, train_y)
-
-# Predict the first few instances
-#print(data_model.predict(train_X.head()))
-
-#predict the val 
-
-val_predictions = data_model.predict(val_X)
-
-#MAE
-val_mae = mean_absolute_error(val_Y , val_predictions )
-
-#lezz see 
-print(val_mae)
-
+for max_leaf_nodes in [5, 50, 500, 5000]:
+    my_mae = get_mae(max_leaf_nodes, train_X, val_X, train_y, val_Y)
+    print("Max leaf nodes: %d  \t\t Mean Absolute Error:  %d" %(max_leaf_nodes, my_mae))
