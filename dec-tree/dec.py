@@ -11,7 +11,7 @@ y = data.price
 #print(y)
 
 #features 
-X = ['bedrooms' , 'bathrooms', 'area' , 'location']
+X = data[['bedrooms' , 'bathrooms', 'area' , 'location']]
 
 from sklearn.tree import DecisionTreeRegressor
 #define model
