@@ -62,8 +62,16 @@ my_pipeline = Pipeline(steps=[('preprocessor', preprocessor),
 # Preprocessing of training data, fit model 
 my_pipeline.fit(X_train, y_train)
 
+
 # Preprocessing of validation data, get predictions
 preds = my_pipeline.predict(X_valid)
+print(preds[0])
+print(preds[1])
+print(preds[2])
+print(preds[3])
+print(preds[4])
+
+print(y_valid.head())
 
 # Evaluate the model
 score = mean_absolute_error(y_valid, preds)
