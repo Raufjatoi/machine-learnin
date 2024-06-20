@@ -1,0 +1,3 @@
+y = data.Price
+X = data[['Rooms', 'Bathroom', 'Landsize', 'BuildingArea', 
+          'YearBuilt', 'Lattitude', 'Longtitude']]
