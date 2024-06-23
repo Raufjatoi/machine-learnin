@@ -59,3 +59,6 @@ print(pred)
 #here you can see the predicted price and lezzz the real ones how so just simply print the last five of y 
 
 print(y.tail())
+
+# see accurate but it doesnt work tha good on new data so we see other models and those spliting and metrics with new model soon 
+#until then cya and thx for watching bye cya  😊
